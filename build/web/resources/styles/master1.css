@@ -1,0 +1,17 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 24, 2024, 4:21:55 PM
+    Author     : mzaid
+*/
+body{
+    background-color: #607d8b;
+    font-family: roboto, sans-serif; 
+    font-size: 25px;
+}
+.in{border: 0;padding: 10;margin: 0;background: #cfd8dc; border-radius: 5px; size: 10; font-size:20px}
+
+input, select{border-radius: 5px; background: #cfd8dc; size:10; font-size:20px;}

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sales Order</title>
+        <h:outputStylesheet name="styles/master.css"/>
+    </h:head>
+    <h:body>
+        <h1>Create Sales Order</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="parName" value="Party Name: " styleClass="custom-label"/>
+            <h:selectOneMenu id="parName" value="#{salesBean.selectedParty}" styleClass="custom-dropdown">
+                <f:selectItems value="#{salesBean.parties}" />
+            </h:selectOneMenu>
+
+            <h:outputLabel for="itemName" value="Item Name: " styleClass="custom-label"/>
+            <h:selectOneMenu id="itemName" value="#{salesBean.selectedItem}" styleClass="custom-dropdown">
+                <f:selectItems value="#{salesBean.items}" />
+            </h:selectOneMenu>
+            
+            <h:outputLabel for="itemQuan" value="Item Quantity: "/>
+            <h:inputText id="itemQuan" value="#{salesBean.itemQuan}" >
+                
+                <f:passThroughAttribute name="type" value="number"/>
+                <f:passThroughAttribute name="min" value="1"/>
+                <f:passThroughAttribute name="max" value="500"/>
+                
+            </h:inputText>
+            
+            <h:outputLabel for="price" value="Price: "/>
+            <h:inputText id="price" value="#{salesBean.price}">
+                <f:passThroughAttribute name="type" value="number"/>
+                <f:passThroughAttribute name="min" value="1"/>
+            </h:inputText>
+        </h:panelGrid>                
+            <br/>    <h:commandButton value="Submit" action="#{salesBean.submit}" styleClass="custom-button"/> &nbsp;&nbsp; &emsp; &zwj;
+            <h:button value="Go Home" outcome="InvMan?faces-redirect=true" styleClass="custom-button"/>
+            <br/><h3 style="color:red;"><h:outputText id="abc" rendered="#{salesBean.errorOccurred}" value="#{salesBean.errorMessage}"/></h3>
+        
+        </h:form>
+    </h:body>
+</html>
+

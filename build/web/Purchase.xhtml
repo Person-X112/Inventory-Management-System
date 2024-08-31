@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Purchase Order</title>
+        <h:outputStylesheet name="styles/master.css"/>  
+    </h:head>
+    <h:body>
+        <h1>Create Purchase Order </h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="parName" value="Party: "/>
+                <h:selectOneMenu value="#{purchaseBean.selectedParty}" id="parName">
+                    <f:selectItems value="#{purchaseBean.parties}"/>
+                </h:selectOneMenu>
+                <h:outputLabel for="itemName" value="Item: "/>
+                <h:selectOneMenu value="#{purchaseBean.selectedItem}" id="itemName">
+                    <f:selectItems value="#{purchaseBean.items}"/>
+                </h:selectOneMenu>
+                <h:outputLabel for="itemQuan" value="Quantity: "/>
+                <h:inputText value="#{purchaseBean.itemQuan}" id="itemQuan">
+                    <f:passThroughAttribute name="type" value="number"/>
+                    <f:passThroughAttribute name="min" value="1"/>
+                    <f:passThroughAttribute name="max" value="10000"/>
+                </h:inputText>
+                <h:outputLabel for="price" value="Price: "/>
+                <h:inputText id="price" value="#{purchaseBean.price}">
+                    <f:passThroughAttribute name="type" value="number"/>
+                    <f:passThroughAttribute name="min" value="1"/>
+                </h:inputText>
+                <h:commandButton value="Submit" action="#{purchaseBean.updateRecords}"/>
+                <h:button value="Go Home" outcome="InvMan?faces-redirect=true"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

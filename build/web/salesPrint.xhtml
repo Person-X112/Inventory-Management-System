@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Order</title>
+        <h:outputStylesheet name='styles/master.css'/>
+    </h:head>
+    <h:body>
+        <h1>Team 12's Inventory Management</h1>
+        <br/>
+        <h3>Sales Order</h3>
+        <h:panelGrid columns="2" cellpadding="10" cellspacing="10">
+            <h:outputText value="Party: "/>
+            <h:outputText value="#{salesBean.selectedParty}"/>
+            <h:outputText value="Party Address: "/>
+            <h:outputText value="#{salesBean.partyAddress}"/>
+            <h:outputText value="Item: "/>
+            <h:outputText value="#{salesBean.selectedItem}"/>
+            <h:outputText value="Quantity: "/>
+            <h:outputText value="#{salesBean.itemQuan}"/>
+            <h:outputText value="Price: "/>
+            <h:outputText value="#{salesBean.price}"/>
+            <h:outputText value="Amount: "/>
+            <h:outputText value="#{salesBean.price*salesBean.itemQuan}"/>
+        </h:panelGrid>
+        <h:commandButton onclick='window.print(); return false;' value='Print' />
+        <h:button value="Go Home" outcome="InvMan?faces-redirect=true"/>
+        <h:button value="Sales Order" outcome="Sales?faces-redirect=true"/>
+    </h:body>
+</html>
+

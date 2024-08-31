@@ -1,0 +1,268 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #acb6e5, #86fde8);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    background-size: cover;
+    
+}
+
+/* Container Styles */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.4em;
+    text-align: center;
+    font-weight: 700;
+}
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    margin-left: 35px;
+    text-align: left;
+    font-weight: 600;
+}
+
+input[type="button"], input[type="submit"] {
+    margin:10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #6a1b9a; /* Darkish violet fill color */
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+
+input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: #4a148c; 
+}
+
+input[type="button"]::before, input[type="submit"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 12px;
+    border: 2px solid #1565C0; 
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+input[type="button"]:hover::before , input[type="submit"]:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+input[type="button"]:focus, input[type="submit"]:focus {
+    outline: none;
+}
+/* Table Styles */
+table{
+    margin: 5%;
+    overflow-x: auto;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg, #4caf50, #81c784); /* Green gradient */
+    color: #ffffff;
+    text-align: center;
+}
+
+.table-container th, .table-container td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table-container th {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+/* Table Row Hover Effect */
+.table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1565C0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+/* Radio Buttons Styles */
+.radio-buttons {
+    margin-top: 20px;
+}
+
+.radio-buttons h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.radio-buttons label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.radio-buttons input[type="radio"] {
+    opacity: 0;
+    cursor: pointer;
+    accent-color: #4caf50; /* Custom accent color for radio buttons */
+}
+
+.radio-buttons label:hover {
+    color: #1565C0;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+select {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select:hover {
+    border-color: #1565C0;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+select:focus {
+    outline: none;
+    border-color: #1565C0;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Arrow styling */
+select::after {
+    content: "\25BC"; /* Unicode for a downward arrow */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #1565C0;
+}
+
+/* Targeting all text inputs */
+input[type="text"], input[type="password"] {
+    border: 2px solid #1565C0;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for text inputs */
+input[type="text"]:hover, input[type="password"]:hover {
+    border-color: #0D47A1; /* Darker shade on hover */
+}
+
+/* Focus effect for text inputs */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #0D47A1;
+    box-shadow: 0 0 5px rgba(21, 101, 192, 0.5); /* Blue shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Targeting all number inputs */
+input[type="number"] {
+    border: 2px solid #1565C0;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 150px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for number inputs */
+input[type="number"]:hover {
+    border-color: #0D47A1;
+}
+
+/* Focus effect for number inputs */
+input[type="number"]:focus {
+    border-color: #0D47A1;
+    box-shadow: 0 0 5px rgba(21, 101, 192, 0.5);
+    outline: none;
+}
+

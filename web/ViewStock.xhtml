@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>View Stocks</title>
+        <meta name="viewport" content="width=device-width"/>
+        <h:outputStylesheet name="./styles/master.css"/>
+    </h:head>
+    <body>
+        <f:view>
+            <h:form>
+                <h:dataTable value="#{viewStockBean.items}" var="item" border="1">
+                    <h:column>
+                        <f:facet name="header">Item</f:facet>
+                        <h:outputText value="#{item.itemName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Stock</f:facet>
+                        <h:outputText value="#{item.stock}"/>
+                    </h:column>
+                    
+                </h:dataTable>
+                <h:button value="Go Home" outcome="InvMan?faces-redirect=true"/>
+            </h:form>
+        </f:view>
+
+    </body>
+</html>
